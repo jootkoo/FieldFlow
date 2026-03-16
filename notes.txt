@@ -1,0 +1,7 @@
+When adding a page, 
+first the intial ts needs to be a valid component, exported etc
+then on the app.routes.ts , create the import of the name "" and add the valid file location 
+then add the route in the export routes
+
+
+

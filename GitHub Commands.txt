@@ -1,0 +1,19 @@
+GitHub Commands
+
+
+git init
+git remote add origin https://github.com/jootkoo/FieldFlow.git
+git branch -M main
+git add .
+git commit -m "whatever u just did"
+git push -u origin main
+
+
+
+Angular commands
+ng new frontend   --- this creates a new ng
+cd frontend
+npm install
+ng serve    --- This starts the server
+npm install bootstrap --to make sure theyre there
+npm install @angular/common @angular/forms @angular/router --- for good measure
