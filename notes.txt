@@ -4,4 +4,30 @@ then on the app.routes.ts , create the import of the name "" and add the valid f
 then add the route in the export routes
 
 
+[ngModel] = is how the input and component stays connected from html to ts
+"username" in html goes to this.username in ts thanks to ngModel
+this comes from the FormsModule in angular.
 
+
+
+HTML NOTES
+
+width - makes it stretch across the container
+padding - gives it height and inner space 
+border - border line 
+border-radius - rounds the corners of container
+font-size - font
+cursor: pointer - gives the hand cursor when hovering
+margin-top - adds space at the top of the container
+margin-bottom - adds space at the bottom of container
+transition - makes hover and effects smooth
+
+display: 
+        block - takes up the full available width by default
+        inline - stays in the same line as surrounding text but does not respond well to width/height the same block elements do
+        inline-block - stays on the same line, but can have width and height like a block
+        none - visibility hidden
+        flex - becomes child so if there are rows it becomes row
+(these dont do anything unless display the container is flex or a grid container)
+justify-content - controls alignment on main axis
+align-items - controls alignment on the cross axis

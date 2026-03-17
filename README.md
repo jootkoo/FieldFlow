@@ -4,8 +4,8 @@ FieldFlow is a small business management app for service-based businesses to man
 Main Goal is to create fullstack program to demonstrate knowledge, project building, organization, documentation, usablity and efficiency.
 
 ## Tech Stack
-- Frontend: TypeScript, React/Next.js
-- Backend: C#, Angular Core Web API
+- Frontend: TypeScript, Angular
+- Backend: C#, ASP.NET Core Web API
 - Database: PostgreSQL
 
 ## Features

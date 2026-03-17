@@ -2,7 +2,8 @@
   <div class="signup-card">
     <h1>Create Account</h1>
     <p class="subtitle">Sign up to get started</p>
-
+    <p class="subtitle">Password must be at least 6 characters long</p>
+    <!-- The required attribute makes sure the field is not empty  otherwise cant submit -->
     <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
       <div class="form-group">
         <label for="username">Username</label>
@@ -16,6 +17,7 @@
         />
       </div>
 
+      <!-- Email input, type emaiil and the required makes sure it is in email format otherwise cant submit -->
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -28,7 +30,7 @@
           placeholder="Enter your email"
         />
       </div>
-
+      <!-- Password input, type password and required makes sure it is not empty otherwise cant submit -->
       <div class="form-group">
         <label for="password">Password</label>
         <input

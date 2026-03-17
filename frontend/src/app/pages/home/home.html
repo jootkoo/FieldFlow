@@ -1,27 +1,33 @@
-<!doctype html>
 <div class="home">
-  <h1>Home</h1>
-  <p>Welcome to the Home! Please Login.</p>
+  <div class="login-card">
+    <h1>Welcome to FieldFlow!</h1>
+    <p class="subtitle">Please Login</p>
 
-  <form>
-    <div>
-      <label for="username">User Name:</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username" />
+    <div class="form-group">
+      <label for="username">User Name</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your username"
+      />
     </div>
 
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" />
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+      />
     </div>
 
     <button type="submit">Submit</button>
-  </form>
 
-    <div>
-      <label for="username">Don't have an account?</label>
+    <p class="signup-text">
+      Don't have an account?
       <a href="/signup">Sign Up</a>
-    </div>
-
-
-
+    </p>
+  </div>
 </div>
