@@ -1,7 +1,77 @@
-<!doctype html>
 <navbar></navbar>
-<div class="inventory">
-  <h1>Inventory</h1>
-  <p>Welcome to the inventory</p>
-  
+
+<div class="inventory-page">
+  <div class="inventory-card">
+    <h1>Inventory</h1>
+    <p class="subtitle">Manage your stock items</p>
+
+    <div class="inventory-form">
+      <div class="form-group">
+        <label for="item">Item Name</label>
+        <input
+          type="text"
+          id="item"
+          name="item"
+          [(ngModel)]="item"
+          placeholder="Enter item name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          [(ngModel)]="quantity"
+          placeholder="Enter quantity"
+        />
+      </div>
+
+      <button type="button" (click)="addItem()">Add Item</button>
+    </div>
+
+    <div class="inventory-list" *ngIf="stock.length > 0; else emptyState">
+      <div class="inventory-row header-row">
+        <span>Item</span>
+        <span>Quantity</span>
+        <span>Actions</span>
+      </div>
+
+      <div class="inventory-row" *ngFor="let stockItem of stock; let i = index">
+        <ng-container *ngIf="editingIndex !== i; else editMode">
+          <span>{{ stockItem.item }}</span>
+          <span>{{ stockItem.quantity }}</span>
+
+          <div class="action-buttons">
+            <button type="button" class="edit-btn" (click)="startEdit(i)">Edit</button>
+            <button type="button" class="remove-btn" (click)="removeItem(i)">Remove</button>
+          </div>
+        </ng-container>
+
+        <ng-template #editMode>
+          <input
+            type="text"
+            [(ngModel)]="editItem"
+            placeholder="Edit item name"
+          />
+
+          <input
+            type="number"
+            [(ngModel)]="editQuantity"
+            placeholder="Edit quantity"
+          />
+
+          <div class="action-buttons">
+            <button type="button" class="save-btn" (click)="saveEdit(i)">Save</button>
+            <button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <ng-template #emptyState>
+      <p class="empty-message">No items in inventory yet.</p>
+    </ng-template>
+  </div>
 </div>

@@ -1,7 +1,94 @@
-<!doctype html>
 <navbar></navbar>
-<div class="jobs">
-  <h1>Jobs</h1>
-  <p>Welcome to the jobs</p>
-  
+
+<div class="jobs-page">
+  <div class="jobs-card">
+    <h1>Jobs</h1>
+    <p class="subtitle">Add and manage your current jobs</p>
+
+    <div class="jobs-form">
+      <div class="form-group">
+        <label for="jobName">Job Name</label>
+        <input
+          type="text"
+          id="jobName"
+          name="jobName"
+          [(ngModel)]="jobName"
+          placeholder="Enter job name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="client">Client</label>
+        <input
+          type="text"
+          id="client"
+          name="client"
+          [(ngModel)]="client"
+          placeholder="Enter client name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input
+          type="text"
+          id="status"
+          name="status"
+          [(ngModel)]="status"
+          placeholder="Enter job status"
+        />
+      </div>
+
+      <button type="button" (click)="addJob()">Add Job</button>
+    </div>
+
+    <div class="jobs-list" *ngIf="jobsList.length > 0; else emptyState">
+      <div class="jobs-row header-row">
+        <span>Job Name</span>
+        <span>Client</span>
+        <span>Status</span>
+        <span>Actions</span>
+      </div>
+
+      <div class="jobs-row" *ngFor="let job of jobsList; let i = index">
+        <ng-container *ngIf="editingIndex !== i; else editMode">
+          <span>{{ job.jobName }}</span>
+          <span>{{ job.client }}</span>
+          <span>{{ job.status }}</span>
+
+          <div class="action-buttons">
+            <button type="button" class="edit-btn" (click)="startEdit(i)">Edit</button>
+            <button type="button" class="remove-btn" (click)="removeJob(i)">Remove</button>
+          </div>
+        </ng-container>
+
+        <ng-template #editMode>
+          <input
+            type="text"
+            [(ngModel)]="editJobName"
+            placeholder="Edit job name"
+          />
+          <input
+            type="text"
+            [(ngModel)]="editClient"
+            placeholder="Edit client"
+          />
+          <input
+            type="text"
+            [(ngModel)]="editStatus"
+            placeholder="Edit status"
+          />
+
+          <div class="action-buttons">
+            <button type="button" class="save-btn" (click)="saveEdit(i)">Save</button>
+            <button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <ng-template #emptyState>
+      <p class="empty-message">No jobs added yet.</p>
+    </ng-template>
+  </div>
 </div>
