@@ -6,7 +6,7 @@ import { Inquiries } from './pages/inquiries/inquiries';
 import { Inventory } from './pages/inventory/inventory';
 import { Jobs } from './pages/jobs/jobs';
 import { Estimates } from './pages/estimates/estimates';
-import { Customers } from './pages/customers/customers';
+import { Employees } from './pages/employees/employees';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path  : 'inventory', component : Inventory},
     { path  : 'jobs', component : Jobs},
     { path  : 'estimates', component : Estimates},
-    { path  : 'customers', component : Customers}
+    { path  : 'employees', component : Employees}
 
 
 

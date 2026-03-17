@@ -42,7 +42,7 @@ Create the main pages first so the app structure exists before adding logic.
 - Dashboard
 - Inventory
 - Jobs
-- Customers
+- employees
 - Estimates
 - Inquiries
 
@@ -82,7 +82,7 @@ Improve the frontend structure after auth pages exist.
   - Dashboard
   - Inventory
   - Jobs
-  - Customers
+  - employees
   - Estimates
   - Inquiries
 - Create reusable UI components where helpful
@@ -111,7 +111,7 @@ Design the first version of the database before connecting everything.
 
 ### Initial Tables
 - Users
-- Customers
+- employees
 - Jobs
 - Inventory
 - Estimates
@@ -156,7 +156,7 @@ Make the dashboard useful after login works.
 - Display useful business info later:
   - active jobs
   - recent inquiries
-  - customer count
+  - employees count
   - inventory alerts
 
 ---
@@ -176,11 +176,11 @@ Build each main feature one at a time.
 - Edit jobs
 - Update status
 
-### Customers
-- View customers
-- Add customer
-- Edit customer
-- Delete customer
+### Employees
+- View employees
+- Add employees
+- Edit employees
+- Delete employees
 
 ### Estimates
 - Create estimates

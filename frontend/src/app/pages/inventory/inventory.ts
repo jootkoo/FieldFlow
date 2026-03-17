@@ -28,6 +28,7 @@ export class Inventory {
     //Add item to inventory
     //adds the item to the stock array and resets the input fields.
     addItem() {
+        if (this.item != '') {
             this.stock.push({ item: this.item, quantity: this.quantity });
 
             const itemData = {
@@ -35,6 +36,7 @@ export class Inventory {
                 quantity: this.quantity
             };
             //send itemData to the backend to save it in the database
+          }
     }
 
     //Start editing item
